@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create an Article</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Quill Style Sheet -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <div class="logo">Jonny's Learning Dump</div>
+        <div class="nav-items-create">
+            <a href="{{ url_for('see_past_articles')}}"><button>Past Articles</button></a>
+            <a href="{{ url_for('create')}}"><button>Create Article</button></a>
+            <a href="{{ url_for('sign_out')}}"><button>Sign Out</button></a>
+        </div>
+    </nav>
+    <div class="create-container">
+        <div class="create-form">
+            <h1>Create a new Learning Dump!</h1>
+            <form id="article-form" action="{{ url_for('submit') }}" method="POST">
+                <label for="title">Title</label>
+                <input type="text" class="title" name="art_title" placeholder="Article Title" required>
+                <!-- Quill -->
+                <label for="editor">Content</label>
+                <div id="editor" name="essay" id="essay" required>
+                </div>
+                <input type="hidden" name="article-content" id="article-content" required>
+                <button class="submission" type="submit">Create Article</button>
+            </form>
+        </div>
+    </div>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script href="{{url_for('static', filename='app.js')}}"></script>
+    <script>
+        const toolbarOptions = [[{ 'font': [] }],
+                               [{ 'header': 1 }, { 'header': 2 }, { 'header': 3 }],
+                               ['bold', 'italic', 'underline', 'strike'],
+                               [{ 'color': [] }, { 'background': [] }],
+                               [{ 'indent': '-1'}, { 'indent': '+1' }],
+                               [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
+                               [{ 'script': 'sub'}, { 'script': 'super' }],
+                               ['link', 'image', 'video'], ['blockquote', 'code-block']]
+        const quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: toolbarOptions
+            }
+        });
+        document.getElementById('article-form').onsubmit = function() {
+            // Set the value of the hidden input to the HTML content from Quill
+            document.getElementById('article-content').value = quill.root.innerHTML;
+          };
+      </script>
+</body>
+</html>

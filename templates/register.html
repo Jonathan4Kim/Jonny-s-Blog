@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home')}}"><div class="logo">Jonny's Learning Dump</div></a>
+        <a href="{{url_for('login')}}"><h2>Already have an account? Log in here!</h2></a>
+    </nav>
+    <div class="register-container">
+        <div class="register-form">
+            <h1>Register Learning Account</h1>
+            <!-- <div class="box"> -->
+            <form method="POST" action="/register">
+                <label>E-mail</label>
+                <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                <label>Password</label>
+                <input class="password" type="password" name="password" placeholder="Your Password">
+                <label>Confirm Password</label>
+                <input class="input is-large" type="password" name="confirm-password" placeholder="Confirm Password">
+                <a href="{{url_for('register')}}"><button class="submission">Register</button></a>
+            </form>
+            <!-- </div> -->
+        </div>
+    </div>
+</body>
+</html>

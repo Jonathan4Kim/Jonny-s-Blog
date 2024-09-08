@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create an Article</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Jonny's Learning Dump</div>
+        <div class="nav-items">
+            <a href="{{ url_for('see_past_articles')}}"><button>Past Articles</button></a>
+            <a href="{{ url_for('create')}}"><button>Create Article</button></a>
+            <a href="{{ url_for('sign_out')}}"><button>Sign Out</button></a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Click on the Article Title to see the full content!</h1>
+        {% for article in articles %}
+            <a href="{{ url_for('see_article', article_name=article.title)}}"><h2>{{ article.title }}</h2></a>
+            <!-- Render the article content as HTML -->
+        {% endfor %}
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

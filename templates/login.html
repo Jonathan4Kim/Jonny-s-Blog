@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="{{ url_for('static', filename='styles.css')}}" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home')}}"><div class="logo">Jonny's Learning Dump</div></a>
+        <a href="{{url_for('register')}}"><h2>Don't have an account? Register here!</a></h2>
+    </nav>
+    <div class="login-container">
+        <div class="login-form">
+            <h2 class="title">Login to your account!</h2>
+            <!-- <div class="box"> -->
+            <form method="POST" action="/login" class="register-form">
+                <label>E-mail</label>
+                <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                <label>Password</label>
+                <input class="password" type="password" name="password" placeholder="Your Password">
+                <a href="{{url_for('create')}}"><button class="submission">Login</button></a>
+            </form>
+            <!-- </div> -->
+        </div>
+    </div>
+
+</body>
+</html>

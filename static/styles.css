@@ -1,0 +1,347 @@
+* {
+    background-color: #E8D5D8;
+    color: black;
+    font-family: Verdana, Tahoma, sans-serif;
+    /* don't include default border/padding for size */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: scroll;
+}
+
+a {
+    display: inline-block;
+}
+
+/* Home Screen/Navigation Bar */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+nav {
+    height: 80px;
+    background: #E8D5D8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2);
+    border-bottom: 2px solid black;
+    margin: 0 0.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.logo {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 10px;
+    background-color: #E8D5D8;
+}
+
+.nav-items {
+    background-color: #E8D5D8;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: #E8D5D8;
+    padding: 0 1.5rem;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: row;
+    height: 95vh;
+    padding: 3rem calc((100vw - 1300px) / 2);
+    background: #E8D5D8;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    max-height: 100px;
+}
+
+.column-left h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.column-left p {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #E8D5D8;
+    background: black;
+    cursor: pointer;
+    font-size: larger;
+}
+
+button:hover, .get_started:hover {
+    background: rgb(219, 107, 107);
+    color: white;
+}
+
+.column-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    max-height: 600px
+    /* padding: 0rem 2rem; */
+}
+
+@media screen and (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Register Page */
+div.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* for vertical alignment and centering, use align-items*/
+    align-items: center;
+    opacity: 1;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+div.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 900px;
+    padding: 15px;
+}
+
+.register-form h1 {
+    padding: 20px;
+}
+
+.register-form form {
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 100vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+
+/* submission button */
+.submission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 1em auto;
+}
+
+.submission:hover {
+    color: white;
+    border-color: white;
+    background-color: rgb(219, 107, 107);;
+}
+
+
+
+/* Login Page */
+div.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* for vertical alignment and centering, use align-items*/
+    align-items: center;
+    opacity: 1;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+div.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 900px;
+    padding: 15px;
+}
+
+.login-form h1 {
+    padding: 20px;
+}
+
+.login-form form {
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 100vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+/* Create Article */
+.nav-items-create {
+    background-color: #E8D5D8;
+    padding: 0 5px;
+}
+
+div.create-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* for vertical alignment and centering, use align-items*/
+    align-items: center;
+    opacity: 1;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+div.create-form {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 650px;
+}
+
+.create-form form {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 100vw;
+    max-width: 600px;
+    min-width: 400px;
+    margin: 0 auto;
+}
+
+.create-form h1 {
+    padding: 15px;
+}
+
+div.editor: {
+    border: 2px solid black;
+}
+
+/* display article */
+div.display-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* for vertical alignment and centering, use align-items*/
+    align-items: center;
+    margin: 25px 10px;
+    overflow: auto;
+    padding-top: 10px;
+    gap: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article-content video {
+    min-width: 50%;
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Removes any unwanted inline spacing */
+    margin: 0 auto; /* Optional: Centers the image horizontally */
+}
+
+
+.article-content img {
+    max-width: 50%; /* Ensures the image doesn't exceed the width of its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Removes any unwanted inline spacing */
+    margin: 0 auto; /* Optional: Centers the image horizontally */
+}
+
+/* Container Class: creates flexbox display and centralizes items */
+div.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* for vertical alignment and centering, use align-items*/
+    align-items: center;
+    padding: auto;
+    margin: 25px 10px;
+    overflow: auto;
+    gap: 25px;
+}
+
+/* Header */
+h1, h2, h3, h4 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* for vertical alignment and centering, use align-items*/
+    align-items: center;
+}
+
+fieldset input, textarea {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    padding: 25px;
+    overflow: scroll;
+}
+
+textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px 4px;
+    border: 2px solid black;
+}
+
+::placeholder {
+    padding-left: 5px;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    border: 2px solid black;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+

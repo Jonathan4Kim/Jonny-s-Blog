@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Jonny's Learning Dump</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <nav>
+            <a href="{{ url_for('home')}}"><div class="logo">Jonny's Learning Dump</div></a>
+            <div class="nav-items">
+                <a href="{{ url_for('home')}}"><button href="login.html">Home</button></a>
+                <a href="{{ url_for('login')}}"><button href="login.html">Login</button></a>
+                <a href="{{ url_for('register')}}"><button href="register.html">Register</button></a>
+            </div>
+        </nav>
+            <div class="home-container">
+                <div class="column-left">
+                    <h1>Improve Your Learning Experience </h1>
+                    <p>Free to use and unlimited articles. Write articles talking about what
+                        you learned.</p>
+                        <a href="{{ url_for('register')}}"><button href="register.html" class="get_started">Get Started</button></a>
+                </div>
+                <img class="home-image" src="static/home.svg" width="550" height="550"/>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create an Article</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Jonny's Learning Dump</div>
+        <div class="nav-items">
+            <a href="{{ url_for('see_past_articles')}}"><button>Past Articles</button></a>
+            <a href="{{ url_for('create')}}"><button>Create Article</button></a>
+            <a href="{{ url_for('sign_out')}}"><button>Sign Out</button></a>
+        </div>
+    </nav>
+    <div class="display-container">
+        <h1 class="title">{{article.title}}</h1>
+        <div class="article-content">
+            {{ article.article|safe }}
+        </div>
+        <form action="/edit_article" method="post">
+            <input type="hidden" class="title" name="art_title" placeholder="Article Title" value="{{article.title}}" required>
+            <input type="hidden" name="article-content" id="article-content" value="{{article.article}}" required>
+            <button type="submit">Edit Article</button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
